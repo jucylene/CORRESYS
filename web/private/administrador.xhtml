@@ -22,39 +22,40 @@
 
                 <p:growl id="messages"/>  
 
-                <center for="nome" style="color:greenyellow"> 
+                <center for="nome" style="color:cornflowerblue"> 
                     <h1> 
                         CORRESYS
                     </h1>   
                 </center>
+                
                 <p:menubar>   
                     
                     <p:submenu label="Redação">  
-                        <p:menuitem value="Inserir" url="#" />
+                        <p:menuitem value="Inserir" url="cadastrarRedacao.xhtml" />
                         <p:menuitem value="Alterar" url="#" />  
                         <p:menuitem value="Remover" url="#" />
-                        <p:menuitem value="Visualizar" url="#" />
+                       
                     </p:submenu>  
 
                     <p:submenu label="Administrador"> 
-                        <p:menuitem value="Cadastrar" url="cadastroAdministrador.xhtml" /> 
-                        <p:menuitem value="Alterar" url="#" />  
-                        <p:menuitem value="Remover" url="#" />
-                        <p:menuitem value="Visualizar" url="#" />
+                        <p:menuitem value="Cadastrar" url="cadastrarAdministrador.xhtml" /> 
+                        <p:menuitem value="Alterar" url="alterarAdministrador.xhtml" />  
+                        <p:menuitem value="Remover" url="removerAdministrador.xhtml" />
+                        
                     </p:submenu> 
 
                     <p:submenu label="Aluno">  
                         <p:menuitem value="Cadastrar" url="cadastroAluno.xhtml" /> 
                         <p:menuitem value="Alterar" url="alterarAluno.xhtml" />  
                         <p:menuitem value="Remover" url="removerAluno.xhtml" />
-                        <p:menuitem value="Visualizar" url="visualizarAluno.xhtml" />
+                        
                     </p:submenu>  
 
                     <p:submenu label="Corretor"> 
                         <p:menuitem value="Cadastrar" url="cadastroCorretor.xhtml" /> 
                         <p:menuitem value="Alterar" url="alterarCorretor.xhtml" />
                         <p:menuitem value="Remover" url="removerCorretor.xhtml" />
-                        <p:menuitem value="Visualizar" url="visualizarCorretor.xhtml" />
+                        
                     </p:submenu>
 
                     <p:menuitem value="Sair" url="http://localhost:8084/CORRESYS_1.0/faces/homeCorretor.xhtml" icon="ui-icon-close" />  

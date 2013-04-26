@@ -7,10 +7,12 @@
 
     <f:view contentType="text/html">
         <h:head>
+            
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
                 <title>Corresys_IFRN</title>
             </f:facet>
+            
         </h:head>
 
         <h:body>
@@ -18,7 +20,7 @@
             <p:layout fullPage="true">
 
                 <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                    <center for="nome" style="color:greenyellow"> 
+                    <center for="nome" style="color:cornflowerblue"> 
                         <h1> 
                             CORRESYS
                         </h1>   
@@ -40,15 +42,15 @@
                 <p:layoutUnit position="center">
                     <form action="/CORRESYS_1.0/faces/private/administrador.xhtml" method="post"> 
                         <center>
+                            <p:panel header="LOGIN DO CORRETOR">
                             <br/>
-                            LOGIN DO PROFESSOR
                             <br/>
+                            Login : <input type="text" name="email" style="color: cornflowerblue"/><br/>
                             <br/>
-                            Login : <input type="text" name="email" /><br/>
-                            <br/>
-                            Senha: <input type="password" name="senha" />
+                            Senha: <input type="password" name="senha" style="color: cornflowerblue" />
                             <br/>
                             <input type="submit" value="Enviar"/> 
+                            </p:panel>
                         </center>
                     </form>
                 </p:layoutUnit>

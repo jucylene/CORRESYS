@@ -8,11 +8,13 @@
         <title>Cadastro_Administrador</title>
     </h:head>
     <h:body>
-        <center for="nome" style="color:greenyellow"> 
+        
+        <center for="nome" style="color:cornflowerblue"> 
             <h1> 
                 CORRESYS
             </h1>   
         </center>
+        
         <h:form>  
             <p:menubar>   
 
@@ -25,16 +27,16 @@
 
                 <p:submenu label="Administrador"> 
                     <p:menuitem value="Cadastrar" url="cadastroAdministrador.xhtml" /> 
-                    <p:menuitem value="Alterar" url="#" />  
-                    <p:menuitem value="Remover" url="#" />
-                    <p:menuitem value="Visualizar" url="#" />
+                    <p:menuitem value="Alterar" url="alterarAdministrador.xhtml" />  
+                    <p:menuitem value="Remover" url="removerAdministrador.xhtml" />
+                    <p:menuitem value="Visualizar" url="visualizarAdministrador.xhtml" />
                 </p:submenu> 
 
                 <p:submenu label="Aluno">  
                     <p:menuitem value="Cadastrar" url="cadastroAluno.xhtml" /> 
                     <p:menuitem value="Alterar" url="alterarAluno.xhtml" />  
                     <p:menuitem value="Remover" url="removerAluno.xhtml" />
-                    <p:menuitem value="Visualizar" url="visualizarAluno.xhtm" />
+                    <p:menuitem value="Visualizar" url="visualizarAluno.xhtml" />
                 </p:submenu>  
 
                 <p:submenu label="Corretor"> 
@@ -54,26 +56,30 @@
 
         </h:form>  
 
+        <br/>
+        
         <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
+            <center>
+                <br/>
+                <h:outputText style="color:red" value="#{administradorMB.mensagem}"/>
+            </center>
             <h:form>
 
                 <h:inputHidden  value="#{administradorMB.administrador.id}"/> 
                 <br/>
-                <center>
-                    CADASTRO DE ADMINISTRADOR
-                    <br/>
-                    <br/>
-                </center>
+                <p:panel header="CADASTRO DE ADMINISTRADOR">
+
+                </p:panel>
                 <center>
                     <h:form>
-                        Matrícula <br/><p:inputText title="Matrícula" value="#{administradorMB.administrador.matricula}"></p:inputText><h:message for="nome" style="color:red"/>
-                           
+                        Matrícula *<br/><p:inputMask title="Matrícula" value="#{administradorMB.administrador.matricula}" required="true" requiredMessage="Matrícula obrigatória" maxlength="10" mask="9999999999"></p:inputMask><h:message for="matrícula"  style="color:red"/>
                         <br/>
-                        Nome <br/><p:inputText title="Nome" value="#{administradorMB.administrador.nome}"></p:inputText><h:message for="nome" style="color:red"/>
+                        Nome *<br/><p:inputText title="Nome" value="#{administradorMB.administrador.nome}" required="true" requiredMessage="Campo nome é obrigatório" maxlength="150"></p:inputText><h:message for="nome" style="color:red"/>
                         <br/>
-                        E-mail <br/><p:inputText title="E-mail" value="#{administradorMB.administrador.email}"></p:inputText><h:message for="nome" style="color:red"/>
+                        E-mail <br/> <p:inputText title="E-mail" value="#{administradorMB.administrador.email}"  maxlength="150">
+                        <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/></p:inputText><h:message for="email" style="color:red"/>
                         <br/>
-                        Senha <br/><p:password title="Senha" value="#{administradorMB.administrador.senha}"></p:password><h:message for="nome" style="color:red"/>
+                        Senha *<br/><p:password title="Senha" value="#{administradorMB.administrador.senha}" required="true" requiredMessage="Campo senha é obrigatório" maxlength="30"></p:password><h:message for="nome" style="color:red"/>
                         <br/>
                         <br/>
                         <h:commandButton title="Inserir" value="Inserir" action="#{administradorMB.inserir()}" /><h:message for="nome" style="color:red"/>
@@ -82,6 +88,7 @@
                         <br/>
                     </h:form>
                 </center>
+                <h:messages style="color:red"/>
             </h:form>
         </p:layoutUnit>
         <br/>  
